@@ -174,7 +174,7 @@ def pregunta_10():
     return tbl0.copy().groupby('_c1')['_c2'].agg(lambda x: ':'.join(map(str, sorted(x)))).reset_index()
 
 
-print(pregunta_10())
+
 
 
 def pregunta_11():
@@ -217,7 +217,7 @@ def pregunta_12():
     return tbl2.groupby('_c0')['_c5'].apply(lambda x: ','.join(sorted(x)))
 
 
-print(pregunta_12())
+
 
 
 def pregunta_13():
