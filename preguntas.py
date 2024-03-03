@@ -171,7 +171,7 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return tbl0.copy().groupby('_c1')['_c2'].agg(lambda x: ':'.join(map(str, sorted(x)))).reset_index()
+    return tbl0.copy().groupby('_c1')['_c2'].agg(lambda x: ':'.join(map(str, sorted(x))))
 
 
 
@@ -214,7 +214,7 @@ def pregunta_12():
 
     tbl2['_c5'] = tbl2.copy().apply(lambda row: f"{row['_c5a']}:{row['_c5b']}", axis=1)
 
-    return tbl2.groupby('_c0')['_c5'].apply(lambda x: ','.join(sorted(x)))
+    return tbl2.groupby('_c0')['_c5'].apply(lambda x: ','.join(sorted(x))).reset_index(name='_c5')
 
 
 
